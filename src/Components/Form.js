@@ -8,7 +8,7 @@ class Form extends Component {
       name: "",
       date:"",
       time:"",
-      number:null
+      number:""
     }
   }
 
@@ -18,10 +18,13 @@ class Form extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
-    console.log({id:Date.now(),...this.state})
     this.props.addReservation(this.state)
-
+    this.setState( {
+      name: "",
+      date:"",
+      time:"",
+      number:""
+    })
   }
 
   render(){
@@ -30,6 +33,7 @@ class Form extends Component {
         <input
           type="text"
           name="name"
+          value={this.state.name}
           placeholder="Name"
           onChange={event => this.handleChange(event)}
         />
@@ -37,6 +41,7 @@ class Form extends Component {
          <input
            type="date"
            name="date"
+           value={this.state.date}
            placeholder="Date(mm/dd)"
            onChange={event => this.handleChange(event)}
          />
@@ -45,6 +50,7 @@ class Form extends Component {
             type="time"
             name="time"
             placeholder="time"
+            value={this.state.time}
             onChange={event => this.handleChange(event)}
           />
 
@@ -52,6 +58,8 @@ class Form extends Component {
              type="number"
              name="number"
              placeholder="Number Of Guests"
+             min="1"
+             value={this.state.number}
              onChange={event => this.handleChange(event)}
            />
 

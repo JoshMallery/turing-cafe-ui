@@ -26,7 +26,7 @@ class App extends Component {
       body: JSON.stringify(reservationData)
     })
     .then(response => response.json())
-    .then(response => this.setState({reservations:[response,...this.state.reservations]}))
+    .then(response => this.setState({reservations:[...this.state.reservations,response]}))
     .catch(error => console.log(error))
   }
 

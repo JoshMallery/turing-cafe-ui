@@ -20,23 +20,23 @@ describe("Dashboard Tests", () => {
     cy.get('.card').should('exist')
     })
 
-    it('Box should contain data', () => {
-      cy.get('.card').should('exist')
-      .first()
-      .contains("Christie")
+  it('Box should contain data', () => {
+    cy.get('.card').should('exist')
+    .first()
+    .contains("Christie")
 
-      cy.get('.card')
-      .first()
-      .contains("12/29")
+    cy.get('.card')
+    .first()
+    .contains("12/29")
 
-      cy.get('.card')
-      .first()
-      .contains("7:00")
+    cy.get('.card')
+    .first()
+    .contains("7:00")
 
-      cy.get('.card')
-      .first()
-      .contains("12")
-      })
+    cy.get('.card')
+    .first()
+    .contains("12")
+    })
 
     it('should be able to enter data in name',() => {
       cy.get('input').eq(0).type('Peter').should('have.value','Peter')
@@ -63,19 +63,19 @@ describe("Dashboard Tests", () => {
       cy.get('button').first().click()
 
       cy.get('.card')
-      .first()
+      .last()
       .contains('Jason')
 
       cy.get('.card')
-      .first()
+      .last()
       .contains("2022-05-23")
 
       cy.get('.card')
-      .first()
+      .last()
       .contains("13:00")
 
       cy.get('.card')
-      .first()
+      .last()
       .contains("5")
 
     })
